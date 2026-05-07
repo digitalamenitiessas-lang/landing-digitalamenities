@@ -228,9 +228,13 @@ export const socialLinks: SocialLink[] = [
   { label: "WhatsApp", handle: "Contacto directo", href: undefined }
 ];
 
-export const ctaLinks = {
+export const ctaLinks: {
+  primary: OptionalLink;
+  secondary: OptionalLink;
+} = {
   primary: {
-    label: "Quiero mi amenity digital"
+    label: "Quiero mi amenity digital",
+    href: undefined
   },
   secondary: {
     label: "Ver casos reales",
