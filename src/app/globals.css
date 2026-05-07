@@ -793,39 +793,6 @@ img {
 
 @media (max-width: 1180px) {
 
-  .hero-grid,
-  .case-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-grid {
-    grid-template-areas:
-      "copy"
-      "visual"
-      "metrics";
-    min-height: auto;
-    align-items: start;
-  }
-
-  .hero-copy h1 {
-    max-width: 10ch;
-  }
-
-  .hero-visual {
-    min-height: auto;
-    justify-content: flex-start;
-    padding-bottom: 24px;
-  }
-
-  .lottie-shell {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: min(100%, 900px);
-    margin-top: 8px;
-    transform: none;
-  }
-
   .benefit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -836,6 +803,32 @@ img {
 }
 
 @media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "visual"
+      "metrics";
+    min-height: auto;
+    align-items: start;
+  }
+
+  .hero-visual {
+    min-height: auto;
+    justify-content: center;
+    padding-bottom: 24px;
+  }
+
+  .lottie-shell {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: 130%;
+    margin-top: 8px;
+    transform: none;
+  }
+
   .page-shell {
     width: min(calc(100% - 28px), var(--container));
     padding-top: 100px;
@@ -943,10 +936,6 @@ img {
 
   .hero-visual {
     padding-bottom: 0;
-  }
-
-  .lottie-frame {
-    width: min(100%, 150vw);
   }
 
   .clients-showcase {
