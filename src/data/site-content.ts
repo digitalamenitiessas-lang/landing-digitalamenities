@@ -66,7 +66,7 @@ export const featuredProducts: Product[] = [
     alt: "Logo de Citify",
     eyebrow: "Activo digital destacado",
     description:
-      "Una experiencia digital pensada para conectar servicios, comunidad y operación en un mismo entorno elegante y fácil de usar.",
+      "Plataforma integral que conecta a los residentes de edificios con negocios locales, mientras optimiza y simplifica toda la administración del consorcio en un entorno digital elegante.",
     cta: {
       label: "Conocer Citify"
     }
@@ -77,7 +77,7 @@ export const featuredProducts: Product[] = [
     alt: "Logo de Contrify",
     eyebrow: "Activo digital destacado",
     description:
-      "Una solución propia diseñada para transformar procesos complejos en flujos claros, ágiles y preparados para escalar.",
+      "La solución definitiva para barrios privados. Conecta a los vecinos con comercios de la zona y agiliza la administración del country, elevando la experiencia de convivencia.",
     cta: {
       label: "Conocer Contrify"
     }

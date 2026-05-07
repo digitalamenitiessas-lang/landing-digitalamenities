@@ -75,7 +75,7 @@ export default function Home() {
         <Reveal>
           <div className="section-heading">
             <span className="eyebrow">Activos principales</span>
-            <h2>Citify y Contrify tienen que verse primero, fuerte y claro.</h2>
+            <h2>Plataformas que transforman la gestión y conectan comunidades.</h2>
             <p>
               Estos productos muestran el tipo de ecosistema digital que Digital
               Amenities puede construir: marca, experiencia y funcionalidad en una
