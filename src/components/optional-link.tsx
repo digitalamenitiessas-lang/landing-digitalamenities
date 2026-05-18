@@ -22,10 +22,19 @@ export function OptionalLink({ href, className, children }: OptionalLinkProps) {
   }
 
   const isAnchor = href.startsWith("#");
+  const isExternal = /^https?:\/\//.test(href);
 
   if (isAnchor) {
     return (
       <a className={className} href={href}>
+        {children}
+      </a>
+    );
+  }
+
+  if (isExternal) {
+    return (
+      <a className={className} href={href} target="_blank" rel="noreferrer">
         {children}
       </a>
     );

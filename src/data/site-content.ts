@@ -68,7 +68,8 @@ export const featuredProducts: Product[] = [
     description:
       "Plataforma integral que conecta a los residentes de edificios con negocios locales, mientras optimiza y simplifica toda la administración del consorcio en un entorno digital elegante.",
     cta: {
-      label: "Conocer Citify"
+      label: "Conocer Citify",
+      href: "https://citify.com.ar"
     }
   },
   {
@@ -79,7 +80,8 @@ export const featuredProducts: Product[] = [
     description:
       "La solución definitiva para barrios privados. Conecta a los vecinos con comercios de la zona y agiliza la administración del country, elevando la experiencia de convivencia.",
     cta: {
-      label: "Conocer Contrify"
+      label: "Conocer Contrify",
+      href: "https://countrify.com.ar"
     }
   }
 ];
