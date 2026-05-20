@@ -73,14 +73,14 @@ export const featuredProducts: Product[] = [
     }
   },
   {
-    name: "Contrify",
-    logo: "/assets/products/contrify-logo.jpg",
-    alt: "Logo de Contrify",
+    name: "Countrify",
+    logo: "/assets/products/contrify-logo.png",
+    alt: "Logo de Countrify",
     eyebrow: "Activo digital destacado",
     description:
       "La solución definitiva para barrios privados. Conecta a los vecinos con comercios de la zona y agiliza la administración del country, elevando la experiencia de convivencia.",
     cta: {
-      label: "Conocer Contrify",
+      label: "Conocer Countrify",
       href: "https://countrify.com.ar"
     }
   }

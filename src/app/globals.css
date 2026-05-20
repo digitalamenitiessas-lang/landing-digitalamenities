@@ -495,9 +495,18 @@ img {
     #ffffff;
 }
 
+.product-logo-wrap {
+  height: 160px;
+}
+
 .product-logo,
 .carousel-logo {
   object-fit: contain;
+}
+
+.product-logo {
+  max-height: 88px;
+  width: auto;
 }
 
 .product-card h3,
