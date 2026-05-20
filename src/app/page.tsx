@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 import { ClientsCarousel } from "@/components/clients-carousel";
+import { ContactModal } from "@/components/contact-modal";
+import { ContactTrigger } from "@/components/contact-trigger";
 import { HeroLottie } from "@/components/hero-lottie";
 import { OptionalLink } from "@/components/optional-link";
 import { Reveal } from "@/components/reveal";
@@ -21,6 +23,7 @@ import {
 export default function Home() {
   return (
     <main className="page-shell">
+      <ContactModal />
       <section className="hero-section" id="top">
         <SiteHeader />
 
@@ -37,9 +40,9 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <OptionalLink className="button button-primary" href={ctaLinks.primary.href}>
+              <ContactTrigger className="button button-primary" variant="amenity">
                 {ctaLinks.primary.label}
-              </OptionalLink>
+              </ContactTrigger>
               <OptionalLink className="button button-secondary" href={ctaLinks.secondary.href}>
                 {ctaLinks.secondary.label}
               </OptionalLink>
@@ -197,9 +200,9 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <OptionalLink className="button button-primary" href={ctaLinks.primary.href}>
+            <ContactTrigger className="button button-primary" variant="charla">
               Coordinar una charla
-            </OptionalLink>
+            </ContactTrigger>
             <OptionalLink className="button button-secondary" href="#productos">
               Volver a productos
             </OptionalLink>
