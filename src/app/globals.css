@@ -30,8 +30,10 @@
   --header-height: 78px;
 
   /* Cuánto se “derrama” la animación del hero más allá de su columna.
-     Es lo que permite que en mobile siga leyéndose grande al lado del título. */
-  --hero-visual-bleed: clamp(40px, 8vw, 160px);
+     Es lo que permite que en mobile siga leyéndose grande al lado del título.
+     El max() lo iguala al aire que queda entre el contenedor y el borde de la
+     pantalla, así llega justo al borde en vez de cortarse a mitad de dibujo. */
+  --hero-visual-bleed: min(140px, max(32px, calc((100vw - var(--container)) / 2)));
 
   --section-gap: 84px;
 }
@@ -43,16 +45,15 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 16px);
-  overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
 }
 
-/* clip en lugar de hidden: contiene el sangrado del hero sin crear un
-   contenedor de scroll, asi position: sticky sigue funcionando. */
-@supports (overflow: clip) {
-  html {
-    overflow-x: clip;
-  }
+/* El sangrado de la animación del hero se sale a propósito de la caja del
+   contenedor. Va en html y en body: con clip (o hidden) sólo en html, iOS
+   Safari igual deja panear la página de costado. */
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
@@ -494,7 +495,8 @@ p {
 .lottie-frame {
   width: calc(100% + var(--hero-visual-bleed));
   margin-right: calc(var(--hero-visual-bleed) * -1);
-  aspect-ratio: 520 / 210;
+  /* Coincide con el viewBox recortado que arma hero-lottie.tsx. */
+  aspect-ratio: 442 / 210;
   background: transparent;
 }
 
@@ -1185,11 +1187,11 @@ p {
     --gutter: 18px;
     --header-height: 70px;
     --section-gap: 56px;
-    --hero-visual-bleed: clamp(20px, 8vw, 60px);
+    --hero-visual-bleed: clamp(24px, 9vw, 60px);
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
     grid-template-areas:
       "eyebrow eyebrow"
       "head    visual"
@@ -1323,7 +1325,7 @@ p {
 
 @media (max-width: 620px) {
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.64fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.68fr);
   }
 
   .hero-actions {

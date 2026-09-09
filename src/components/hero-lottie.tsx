@@ -62,6 +62,12 @@ export function HeroLottie({ label }: HeroLottieProps) {
         autoplay: false,
         path: ANIMATION_SRC,
         rendererSettings: {
+          // El lienzo original es 520x210 pero el dibujo ocupa sólo 427x189
+          // (medido: bbox estable en 7,8 → 434,197). Recortamos el aire muerto
+          // de la derecha para que la ilustración se vea ~18% más grande sin
+          // ocupar más ancho de layout. Si se cambia la animación, hay que
+          // volver a medir con svg.getBBox().
+          viewBoxSize: "0 0 442 210",
           preserveAspectRatio: "xMidYMid meet",
           progressiveLoad: true
         }
