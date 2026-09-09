@@ -12,17 +12,17 @@ export type Product = {
   name: string;
   logo: string;
   alt: string;
-  description: string;
   eyebrow: string;
+  description: string;
   cta: OptionalLink;
 };
 
-export type Benefit = {
+export type ValuePoint = {
   title: string;
   description: string;
 };
 
-export type AmenityPoint = {
+export type Capability = {
   title: string;
   description: string;
 };
@@ -32,31 +32,28 @@ export type CaseStudy = {
   logo: string;
   alt: string;
   category: string;
-  summary: string;
-  outcome: string;
-};
-
-export type Testimonial = {
-  quote: string;
-  author: string;
-  role: string;
+  result: string;
 };
 
 export type SocialLink = OptionalLink & {
   handle: string;
 };
 
-export type ClientHighlight = {
-  name: string;
-  logo: string;
-  alt: string;
-};
+export const siteUrl = "https://digitalamenities.com.ar";
+
+export const instagramUrl = "https://www.instagram.com/digital.amenities/";
 
 export const navItems: NavItem[] = [
   { label: "Productos", href: "#productos" },
   { label: "Amenity digital", href: "#amenity-digital" },
-  { label: "Casos reales", href: "#casos" },
+  { label: "Casos", href: "#casos" },
   { label: "Contacto", href: "#contacto" }
+];
+
+export const heroMetrics: { value: string; label: string }[] = [
+  { value: "7", label: "negocios con sistema propio" },
+  { value: "2", label: "plataformas propias" },
+  { value: "24/7", label: "atención que no se frena" }
 ];
 
 export const featuredProducts: Product[] = [
@@ -64,9 +61,9 @@ export const featuredProducts: Product[] = [
     name: "Citify",
     logo: "/assets/products/citify-logo.png",
     alt: "Logo de Citify",
-    eyebrow: "Activo digital destacado",
+    eyebrow: "Edificios y consorcios",
     description:
-      "Plataforma integral que conecta a los residentes de edificios con negocios locales, mientras optimiza y simplifica toda la administración del consorcio en un entorno digital elegante.",
+      "Los vecinos del edificio, los comercios del barrio y la administración del consorcio en un mismo lugar.",
     cta: {
       label: "Conocer Citify",
       href: "https://citify.com.ar"
@@ -74,11 +71,11 @@ export const featuredProducts: Product[] = [
   },
   {
     name: "Countrify",
-    logo: "/assets/products/contrify-logo.png",
+    logo: "/assets/products/countrify-logo.png",
     alt: "Logo de Countrify",
-    eyebrow: "Activo digital destacado",
+    eyebrow: "Barrios privados y countries",
     description:
-      "La solución definitiva para barrios privados. Conecta a los vecinos con comercios de la zona y agiliza la administración del country, elevando la experiencia de convivencia.",
+      "Beneficios de comercios cercanos, comunicación interna y gestión del barrio, en una sola app.",
     cta: {
       label: "Conocer Countrify",
       href: "https://countrify.com.ar"
@@ -86,148 +83,108 @@ export const featuredProducts: Product[] = [
   }
 ];
 
-export const amenityPoints: AmenityPoint[] = [
+export const amenityPoints: ValuePoint[] = [
   {
-    title: "Experiencias memorables",
-    description:
-      "Un amenity digital amplía el valor percibido de tu marca con una capa tecnológica que mejora la experiencia antes, durante y después del servicio."
+    title: "Experiencia",
+    description: "Una capa digital propia que tu cliente usa, disfruta y recuerda."
   },
   {
-    title: "Operación más simple",
-    description:
-      "Centralizamos procesos, automatizamos tareas repetitivas y ordenamos la información para que tu equipo gane tiempo y claridad."
+    title: "Operación",
+    description: "Procesos centralizados, tareas automatizadas e información en un solo lugar."
   },
   {
-    title: "Diferenciación real",
-    description:
-      "No se trata de sumar una app por moda, sino de construir una herramienta propia que te haga más competitivo y difícil de reemplazar."
+    title: "Diferencia",
+    description: "No es una app de moda: es una herramienta difícil de reemplazar."
   }
 ];
 
-export const benefits: Benefit[] = [
+export const capabilities: Capability[] = [
   {
-    title: "Desarrollo a medida",
-    description:
-      "Diseñamos productos que responden a la lógica real de tu negocio, no a una plantilla genérica."
+    title: "A medida",
+    description: "Construido sobre la lógica de tu negocio, no sobre una plantilla."
   },
   {
-    title: "Automatización útil",
-    description:
-      "Integramos IA, notificaciones, dashboards y flujos internos cuando generan impacto concreto."
+    title: "Con IA donde sirve",
+    description: "Bots, asistentes y automatizaciones cuando resuelven algo concreto."
   },
   {
-    title: "Conexión con tu operación",
-    description:
-      "Stock, turnos, datos, ventas, clientes o gestión interna: el producto conversa con el día a día de tu equipo."
+    title: "Conectado",
+    description: "Stock, turnos, ventas y equipo hablando entre sí."
   },
   {
-    title: "Escalabilidad con criterio",
-    description:
-      "Construimos una base sólida para evolucionar el producto por etapas, sin perder consistencia ni control."
-  }
-];
-
-export const clientHighlights: ClientHighlight[] = [
-  {
-    name: "La Vieja Escuela",
-    logo: "/assets/clients/la-vieja-escuela.jpg",
-    alt: "Logo de La Vieja Escuela"
-  },
-  {
-    name: "Bonivibe",
-    logo: "/assets/clients/bonivibe-logo.png",
-    alt: "Logo de Bonivibe"
-  },
-  {
-    name: "Malala",
-    logo: "/assets/clients/malala-logo.jpg",
-    alt: "Logo de Malala"
-  },
-  {
-    name: "Marco Rossi",
-    logo: "/assets/clients/marco-rossi-logo.png",
-    alt: "Logo del estudio jurídico Marco Rossi"
-  },
-  {
-    name: "Sisso",
-    logo: "/assets/clients/sisso-logo.png",
-    alt: "Logo de Sisso"
+    title: "Escalable",
+    description: "Una base sólida para crecer por etapas, sin rehacer todo."
   }
 ];
 
 export const caseStudies: CaseStudy[] = [
   {
-    name: "La Vieja Escuela",
-    logo: "/assets/clients/la-vieja-escuela.jpg",
-    alt: "Logo de La Vieja Escuela",
-    category: "Bar café",
-    summary:
-      "Desarrollamos un sistema a medida con IA para agilizar la carga de datos y simplificar tareas operativas.",
-    outcome: "Más velocidad, menos fricción y un equipo muy conforme con la herramienta."
+    name: "Miska Muska",
+    logo: "/assets/clients/miskamuska-logo.png",
+    alt: "Logo de Miska Muska",
+    category: "Pastelería",
+    result: "Sistema de pedidos con un bot de IA que atiende por WhatsApp las 24 horas."
   },
   {
-    name: "Bonivibe",
-    logo: "/assets/clients/bonivibe-logo.png",
-    alt: "Logo de Bonivibe",
-    category: "Marca de ropa",
-    summary:
-      "Construimos una tienda online conectada al sistema central para unificar stock y mejorar la operación comercial.",
-    outcome: "Una experiencia de venta más prolija, sincronizada y lista para crecer."
+    name: "Hotel Mediterráneo",
+    logo: "/assets/clients/hotel-mediterraneo-logo.png",
+    alt: "Logo del Hotel Mediterráneo de Tucumán",
+    category: "Hotelería",
+    result: "Gestión interna con IA: habitaciones, huéspedes y el día a día del equipo en un panel."
   },
   {
     name: "Malala",
     logo: "/assets/clients/malala-logo.jpg",
     alt: "Logo de Malala",
-    category: "Salón de belleza",
-    summary:
-      "Implementamos un sistema integral con WhatsApp, turnos, stock, empleados y procesos internos.",
-    outcome: "Más orden, seguimiento y una gestión diaria mucho más fluida."
+    category: "Belleza",
+    result: "Turnos, stock, empleados y WhatsApp en un solo sistema."
   },
   {
-    name: "Marco Rossi",
-    logo: "/assets/clients/marco-rossi-logo.png",
-    alt: "Logo del estudio jurídico Marco Rossi",
-    category: "Estudio jurídico",
-    summary:
-      "Desarrollamos una presencia web profesional para reforzar posicionamiento y claridad institucional.",
-    outcome: "Una imagen digital más sólida y alineada con el perfil del estudio."
+    name: "Bonivibe",
+    logo: "/assets/clients/bonivibe-logo.png",
+    alt: "Logo de Bonivibe",
+    category: "Indumentaria",
+    result: "Tienda online sincronizada con el stock del sistema central."
+  },
+  {
+    name: "La Vieja Escuela",
+    logo: "/assets/clients/la-vieja-escuela.jpg",
+    alt: "Logo de La Vieja Escuela",
+    category: "Bar café",
+    result: "IA para cargar datos y sacarse de encima las tareas repetitivas."
   },
   {
     name: "Sisso",
     logo: "/assets/clients/sisso-logo.png",
     alt: "Logo de Sisso",
-    category: "SaaS para peluquerías",
-    summary:
-      "Acompañamos el desarrollo de una solución de turnos pensada para negocios de belleza y operación distribuida.",
-    outcome: "Una plataforma especializada, clara y preparada para crecer con el negocio."
-  }
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Digital Amenities entiende el negocio antes de escribir una sola línea. Eso hace que cada producto se sienta propio desde el primer día.",
-    author: "Equipos que buscan orden y crecimiento",
-    role: "Clientes con operación real"
+    category: "SaaS de turnos",
+    result: "Plataforma de turnos para peluquerías, pensada para varios locales."
   },
   {
-    quote:
-      "Cuando la tecnología acompaña la experiencia y además mejora la gestión interna, el resultado se nota rápido en todo el equipo.",
-    author: "Marcas que querían diferenciarse",
-    role: "Proyectos desarrollados a medida"
-  },
-  {
-    quote:
-      "El valor no está solo en la interfaz: está en tener una herramienta pensada para tu lógica, tus tiempos y tu forma de trabajar.",
-    author: "Negocios en expansión",
-    role: "Implementaciones personalizadas"
+    name: "Marco Rossi",
+    logo: "/assets/clients/marco-rossi-logo.png",
+    alt: "Logo del estudio jurídico Marco Rossi",
+    category: "Legal",
+    result: "Presencia web institucional, sobria y clara."
   }
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: "Instagram", handle: "@digitalamenities", href: undefined },
-  { label: "LinkedIn", handle: "Digital Amenities", href: undefined },
-  { label: "WhatsApp", handle: "Contacto directo", href: undefined }
+  {
+    label: "Instagram",
+    handle: "@digital.amenities",
+    href: instagramUrl
+  },
+  {
+    label: "Citify",
+    handle: "citify.com.ar",
+    href: "https://citify.com.ar"
+  },
+  {
+    label: "Countrify",
+    handle: "countrify.com.ar",
+    href: "https://countrify.com.ar"
+  }
 ];
 
 export const ctaLinks: {
@@ -235,11 +192,11 @@ export const ctaLinks: {
   secondary: OptionalLink;
 } = {
   primary: {
-    label: "Quiero mi amenity digital",
+    label: "Contanos tu proyecto",
     href: undefined
   },
   secondary: {
-    label: "Ver casos reales",
+    label: "Ver casos",
     href: "#casos"
   }
 };
