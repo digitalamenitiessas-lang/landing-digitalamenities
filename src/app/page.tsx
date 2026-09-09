@@ -3,7 +3,6 @@ import Image from "next/image";
 import { ContactModal } from "@/components/contact-modal";
 import { ContactTrigger } from "@/components/contact-trigger";
 import { HeroLottie } from "@/components/hero-lottie";
-import { LogoMarquee } from "@/components/logo-marquee";
 import { OptionalLink } from "@/components/optional-link";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
@@ -73,10 +72,6 @@ export default function Home() {
             </Reveal>
           </div>
         </section>
-
-        <Reveal className="client-strip" as="section" aria-label="Clientes de Digital Amenities">
-          <LogoMarquee items={caseStudies} label="Marcas que trabajan con Digital Amenities" />
-        </Reveal>
 
         <section className="section surface" id="productos" aria-labelledby="productos-title">
           <Reveal>

@@ -35,6 +35,10 @@
      pantalla, así llega justo al borde en vez de cortarse a mitad de dibujo. */
   --hero-visual-bleed: min(140px, max(32px, calc((100vw - var(--container)) / 2)));
 
+  /* Cuánto se monta la animación sobre la columna del título. El h1 tiene
+     z-index mayor, y las esquinas izquierdas del dibujo isométrico son aire. */
+  --hero-visual-overlap: 0px;
+
   --section-gap: 84px;
 }
 
@@ -398,7 +402,7 @@ p {
 */
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   grid-template-areas:
     "eyebrow visual"
     "head    visual"
@@ -440,6 +444,7 @@ p {
   align-items: center;
   justify-content: flex-end;
   min-height: 0;
+  margin-left: calc(var(--hero-visual-overlap) * -1);
 }
 
 .hero-head h1 {
@@ -529,55 +534,6 @@ p {
   aspect-ratio: 1;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.1), transparent 70%);
   animation-delay: -2s;
-}
-
-/* ── Tira de logos ────────────────────────────────────────── */
-
-.client-strip {
-  margin-top: 12px;
-  padding: 8px 0 4px;
-}
-
-.marquee {
-  position: relative;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 42s linear infinite;
-}
-
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track {
-  animation-play-state: paused;
-}
-
-.marquee-group {
-  display: flex;
-  align-items: center;
-  gap: clamp(28px, 6vw, 64px);
-  padding-right: clamp(28px, 6vw, 64px);
-}
-
-.marquee-logo {
-  position: relative;
-  display: block;
-  width: clamp(92px, 17vw, 132px);
-  height: clamp(52px, 10vw, 72px);
-  opacity: 0.75;
-  filter: grayscale(1);
-  transition:
-    opacity 240ms ease,
-    filter 240ms ease;
-}
-
-.marquee:hover .marquee-logo {
-  opacity: 0.9;
-  filter: grayscale(0);
 }
 
 /* ── Secciones y tarjetas ─────────────────────────────────── */
@@ -1118,16 +1074,6 @@ p {
   }
 }
 
-@keyframes marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
 @keyframes modal-backdrop-in {
   from {
     opacity: 0;
@@ -1187,11 +1133,13 @@ p {
     --gutter: 18px;
     --header-height: 70px;
     --section-gap: 56px;
-    --hero-visual-bleed: clamp(24px, 9vw, 60px);
+    /* Justo hasta el borde de la pantalla: la animación no se corta. */
+    --hero-visual-bleed: var(--gutter);
+    --hero-visual-overlap: 12vw;
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
     grid-template-areas:
       "eyebrow eyebrow"
       "head    visual"
@@ -1216,7 +1164,7 @@ p {
 
   .hero-head h1 {
     max-width: none;
-    font-size: clamp(2.1rem, 9vw, 3.4rem);
+    font-size: clamp(1.95rem, 8.2vw, 3.4rem);
     line-height: 0.98;
   }
 
@@ -1325,7 +1273,7 @@ p {
 
 @media (max-width: 620px) {
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.68fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
   }
 
   .hero-actions {
@@ -1420,14 +1368,5 @@ p {
   .reveal.is-hidden {
     opacity: 1;
     transform: none;
-  }
-
-  .marquee-track {
-    animation: none;
-    transform: none;
-  }
-
-  .marquee {
-    overflow-x: auto;
   }
 }
